@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainChain Foundation | Building the Future of Green Industry</title>
+    <style>
+        :root {
+            --primary-green: #008060;
+            --secondary-green: #00a080;
+            --dark-blue: #0f172a;
+            --light-gray: #f8fafc;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+            --accent-blue: #3b82f6;
+            --success-green: #10b981;
+            --warning-orange: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo svg {
+            color: var(--primary-green);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+        
+        .cta-button-header {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 128, 96, 0.3);
+        }
+        .cta-button-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 128, 96, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23e2e8f0" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: var(--text-color);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .cta-button-main {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 128, 96, 0.3);
+        }
+        .cta-button-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 128, 96, 0.4);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--dark-blue);
+            padding: 18px 40px;
+            border: 2px solid var(--primary-green);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-button-secondary:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-color);
+            max-width: 650px;
+            margin: 0 auto 60px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--light-gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: white;
+        }
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 80px;
+            width: 2px;
+            height: 50px;
+            background: var(--border-color);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-content h3 {
+            color: var(--dark-blue);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .process-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Mission Section */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .mission-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .mission-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .mission-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .mission-card p {
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-info h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Report Section */
+        .report-section {
+            background-color: var(--dark-blue);
+            color: white;
+        }
+        .report-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .report-content h2 {
+            color: white;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .report-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .report-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .report-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .report-features li::before {
+            content: '✓';
+            background: var(--success-green);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .report-visual {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            color: var(--dark-blue);
+            transition: transform 0.3s ease;
+        }
+        .report-visual:hover {
+            transform: scale(1.05);
+        }
+        .report-visual img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .report-visual h4 {
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        .report-visual .report-meta {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        /* Partners Section */
+         .partners-section {
+            background-color: var(--light-gray);
+         }
+        .partner-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .partner-logo {
+            max-width: 150px;
+            margin: 0 auto;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        .partner-bridge {
+            margin-top: 80px;
+            padding: 40px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .partner-bridge h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--primary-green);
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-outline:hover {
+            background: white;
+            color: var(--primary-green);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links, .cta-button-header { display: none; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .report-content { grid-template-columns: 1fr; }
+            .report-visual { margin-top: 40px; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step { flex-direction: column; text-align: center; }
+            .process-step::after { display: none; }
+            .process-number { margin-right: 0; margin-bottom: 20px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                SustainChain Foundation
+            </div>
+            <ul class="nav-links">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+            <a href="#contact" class="cta-button-header">Support Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-on-scroll">Building the <span>Green</span> Future of European Industry</h1>
+                    <p class="animate-on-scroll">SustainChain Foundation is an independent non-profit organization that helps businesses transition to sustainable and ethical supply chains through open data, research, and education.</p>
+                    <div class="hero-buttons animate-on-scroll">
+                        <a href="#research" class="cta-button-main">Read Our Report</a>
+                        <a href="#benefits" class="cta-button-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <div class="stat-label">Companies Analyzed</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">€2.3M</span>
+                        <div class="stat-label">Cost Savings Identified</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <div class="stat-label">EU Countries Covered</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">87%</span>
+                        <div class="stat-label">Partner Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section benefits-section" id="benefits">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Why Partner with SustainChain Foundation</h2>
+                <p class="section-subtitle animate-on-scroll">We provide comprehensive support that transforms sustainability challenges into competitive advantages for your business.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">📈</div>
+                        <h3>Competitive Advantage</h3>
+                        <p>Gain early insights into market trends and regulatory changes. Our research helps you stay ahead of competitors and prepare for future sustainability requirements.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Cost Optimization</h3>
+                        <p>Identify cost-saving opportunities through efficient supply chain restructuring. Our analysis shows an average of 15-25% reduction in operational costs.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Risk Mitigation</h3>
+                        <p>Reduce regulatory risks and avoid costly penalties. We help navigate CBAM, EU Green Deal, and other compliance requirements effectively.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">🌍</div>
+                        <h3>Market Access</h3>
+                        <p>Access new markets and customers who prioritize sustainability. Our certification processes open doors to premium market segments.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">🤖</div>
+                        <h3>Digital Tools</h3>
+                        <p>Access cutting-edge digital platforms for supply chain management, including our partnership with Partnex.net for sustainable sourcing.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-icon">🎓</div>
+                        <h3>Expert Training</h3>
+                        <p>Receive comprehensive training for your team on sustainability standards, best practices, and implementation strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">How We Work Together</h2>
+                <p class="section-subtitle animate-on-scroll">Our proven methodology ensures successful sustainability transformation with measurable results.</p>
+                <div class="process-timeline">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Assessment & Analysis</h3>
+                            <p>We conduct a comprehensive evaluation of your current supply chain, identifying key sustainability gaps and opportunities for improvement.</p>
+                        </div>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Strategy Development</h3>
+                            <p>Based on our research and your business goals, we develop a customized sustainability roadmap with clear milestones and timelines.</p>
+                        </div>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Implementation Support</h3>
+                            <p>Our team provides hands-on support during implementation, including training, tool deployment, and partner network access.</p>
+                        </div>
+                    </div>
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Monitoring & Optimization</h3>
+                            <p>We continuously monitor progress, measure results, and optimize strategies to ensure long-term success and maximum ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="mission">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Mission & Services</h2>
+                <p class="section-subtitle animate-on-scroll">We believe that sustainable development is not a limitation, but a source of innovation and growth. Our mission is to provide companies, especially small and medium-sized businesses, with the tools and knowledge to build green and sustainable supply chains.</p>
+                <div class="mission-grid">
+                    <div class="mission-card animate-on-scroll">
+                        <div class="icon">📊</div>
+                        <h3>Open Research</h3>
+                        <p>We analyze markets, identify barriers, and publish free reports that help make data-driven decisions.</p>
+                    </div>
+                    <div class="mission-card animate-on-scroll">
+                        <div class="icon">🎓</div>
+                        <h3>Education and Awareness</h3>
+                        <p>Through webinars and guides, we explain complex standards (EU Green Deal, ESG) in simple terms.</p>
+                    </div>
+                    <div class="mission-card animate-on-scroll">
+                        <div class="icon">🧾</div>
+                        <h3>CBAM Navigation</h3>
+                        <p>We help navigate the Carbon Border Adjustment Mechanism (CBAM) to keep your business competitive.</p>
+                    </div>
+                    <div class="mission-card animate-on-scroll">
+                        <div class="icon">🤝</div>
+                        <h3>Community Building</h3>
+                        <p>We unite industry leaders, innovators, and experts to share experiences and find collaborative solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">What Our Partners Say</h2>
+                <p class="section-subtitle animate-on-scroll">Real testimonials from companies that have transformed their supply chains with our support.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-text">"SustainChain Foundation helped us reduce our carbon footprint by 40% while cutting operational costs. Their CBAM guidance was invaluable for our expansion into EU markets."</div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MK</div>
+                            <div class="author-info">
+                                <h4>Maria Kowalski</h4>
+                                <p>CEO, EcoManufacturing Poland</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-text">"The research and tools provided by SustainChain gave us a competitive edge. We secured three major contracts specifically because of our sustainability certifications."</div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JS</div>
+                            <div class="author-info">
+                                <h4>Johann Schmidt</h4>
+                                <p>Operations Director, GreenTech GmbH</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-text">"Their educational programs transformed our team's understanding of sustainability. We're now leaders in our industry, thanks to SustainChain's comprehensive support."</div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AL</div>
+                            <div class="author-info">
+                                <h4>Andrea Lombardi</h4>
+                                <p>Sustainability Manager, Milano Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section report-section" id="research">
+            <div class="container">
+                <div class="report-content">
+                    <div class="report-text animate-on-scroll">
+                        <h2>Flagship Research 2025</h2>
+                        <p>Our first comprehensive report "The State of Sustainable Sourcing in Europe" analyzes the readiness of over 500 companies to transition to green standards. This in-depth study provides actionable insights and practical recommendations.</p>
+                        
+                        <ul class="report-features">
+                            <li>500+ company case studies across 15 EU countries</li>
+                            <li>Cost-benefit analysis of sustainability initiatives</li>
+                            <li>CBAM compliance roadmap and timeline</li>
+                            <li>Digital transformation strategies</li>
+                            <li>Risk assessment frameworks</li>
+                            <li>Best practice implementations</li>
+                        </ul>
+                        
+                        <a href="#" class="cta-button-main">Download Report for Free</a>
+                    </div>
+                    <div class="report-visual animate-on-scroll float-animation">
+                        <img src="https://placehold.co/400x500/e2e8f0/334155?text=State+of\nSustainable\nSourcing\nReport+2025" alt="Report Cover">
+                        <h4>State of Sustainable Sourcing Report 2025</h4>
+                        <div class="report-meta">
+                            <p><strong>PDF, 48 pages, English</strong></p>
+                            <p>Free download • 2,500+ downloads</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section partners-section" id="partners">
+            <div class="container">
+                 <h2 class="section-title animate-on-scroll">Our Partners and Guideposts</h2>
+                 <p class="section-subtitle animate-on-scroll">We work in accordance with key European initiatives and maintain dialogue with leading industry organizations to achieve our common goals.</p>
+                 
+                 <div class="partner-logos-grid animate-on-scroll">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=European+Commission" alt="European Commission Logo" class="partner-logo" title="European Commission">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=EIT+Manufacturing" alt="EIT Manufacturing Logo" class="partner-logo" title="EIT Manufacturing">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=World+Economic+Forum" alt="World Economic Forum Logo" class="partner-logo" title="World Economic Forum">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=United+Nations+SDG" alt="UN SDG Logo" class="partner-logo" title="United Nations Sustainable Development Goals">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=ISO+Certification" alt="ISO Logo" class="partner-logo" title="ISO Standards">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=Climate+Neutral+Group" alt="Climate Neutral Group" class="partner-logo" title="Climate Neutral Group">
+                 </div>
+
+                 <div class="partner-bridge animate-on-scroll">
+                     <h3>From Research to Action</h3>
+                     <p>To ensure our research brings real value, we collaborate with technology companies that create business tools. Our key partner in supply chain digitalization is the <strong>Partnex.net platform</strong>, which helps companies find each other based on sustainability and reliability data. This partnership allows our members to access a network of verified sustainable suppliers and partners.</p>
+                     <a href="#" class="cta-button-main" style="margin-top: 20px;">Explore Partnership Network</a>
+                 </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2>Ready to Transform Your Supply Chain?</h2>
+                    <p>Join hundreds of forward-thinking companies that are already building sustainable, profitable, and resilient supply chains with our support.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-button-white">Start Your Journey</a>
+                        <a href="#" class="cta-button-outline">Schedule Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                SustainChain Foundation
+            </div>
+            <p>Our goal is to make sustainable development the norm, not the exception.</p>
+            <ul class="footer-links">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="mailto:contact@sustainchain.org">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2025 SustainChain Foundation. All rights reserved. | Registered Non-Profit Organization | EU Transparency Register: SC2025-001
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate elements on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Header background change on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = 'none';
+                }
+            });
+
+            // Counter animation for stats
+            const animateCounter = (element, target) => {
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 20);
+            };
+
+            // Trigger counter animation when stats section is visible
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.stat-number');
+                        counters.forEach(counter => {
+                            const text = counter.textContent;
+                            const target = parseInt(text.replace(/[^\d]/g, ''));
+                            const suffix = text.replace(/[\d,]/g, '');
+                            
+                            let current = 0;
+                            const increment = target / 50;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.textContent = target.toLocaleString() + suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = Math.floor(current).toLocaleString() + suffix;
+                                }
+                            }, 30);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+    </script>
+</body>
+</html>
